@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify UI Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fab fa-spotify"></i>
+                <span>Spotify</span>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i><span>Home</span></a></li>
+                    <li><a href="#"><i class="fas fa-search"></i><span>Search</span></a></li>
+                    <li><a href="#"><i class="fas fa-book"></i><span>Your Library</span></a></li>
+                    <li><a href="#"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                </ul>
+            </div>
+            <div class="playlists">
+                <h3>Playlists</h3>
+                <ul>
+                    <li><a href="#">My Playlist #1</a></li>
+                    <li><a href="#">My Playlist #2</a></li>
+                    <li><a href="#">My Playlist #3</a></li>
+                </ul>
+                <button class="create-playlist-btn"><i class="fas fa-plus-square"></i> Create Playlist</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <div class="nav-buttons">
+                    <button class="back"><i class="fas fa-chevron-left"></i></button>
+                    <button class="forward"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="user-profile">
+                    <button class="premium">Upgrade to Premium</button>
+                    <div class="user-info">
+                        <img id="profile-avatar" src="covers/user_avatar.jpg" alt="User Avatar">
+                        <span id="profile-name">Your Name</span>
+                    </div>
+                    <div class="dropdown">
+                        <button class="profile" id="user-profile-btn"><i class="fas fa-user-circle"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#">Account</a>
+                            <a href="#">Profile</a>
+                            <a href="#">Upgrade to Premium</a>
+                            <a href="#">Settings</a>
+                            <a href="#">Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-area">
+                <h2>Good Morning</h2>
+                <div class="cards-container">
+                    <!-- Dynamic content will go here -->
+                    <div class="card">
+                        <img src="https://via.placeholder.com/150" alt="Album Art">
+                        <h4>Daily Mix 1</h4>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/150" alt="Album Art">
+                        <h4>Discover Weekly</h4>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/150" alt="Album Art">
+                        <h4>Release Radar</h4>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/150" alt="Album Art">
+                        <h4>Chill Vibes</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="now-playing-bar">
+        <div class="song-info">
+            <img src="https://via.placeholder.com/50" alt="Album Art">
+            <div class="text">
+                <h4>Song Title</h4>
+                <p>Artist Name</p>
+            </div>
+        </div>
+        <div class="controls">
+            <button><i class="fas fa-random"></i></button>
+            <button><i class="fas fa-step-backward"></i></button>
+            <button class="play-pause"><i class="fas fa-play-circle"></i></button>
+            <button><i class="fas fa-step-forward"></i></button>
+            <button><i class="fas fa-redo-alt"></i></button>
+        </div>
+        <div class="progress-bar">
+            <span class="current-time">0:00</span>
+            <input type="range" min="0" max="100" value="0" class="slider" id="song-progress">
+            <span class="duration">3:00</span>
+        </div>
+        <div class="volume-control">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" min="0" max="100" value="50" class="slider">
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <!-- Add to Playlist Modal -->
+    <div id="add-to-playlist-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Add to Playlist</h3>
+            <p>Select playlists to add this song to:</p>
+            <div class="playlists-list">
+                <!-- Playlists will be dynamically loaded here -->
+            </div>
+            <button id="add-to-playlist-confirm-btn">Add Song</button>
+        </div>
+    </div>
+</body>
+</html> 
